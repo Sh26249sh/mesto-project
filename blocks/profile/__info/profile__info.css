@@ -1,0 +1,19 @@
+.profile__info{
+  display: grid;
+  grid-gap: 16px 18px;
+  grid-template-columns: 294px 24px;
+  grid-template-rows:  39px 24px;
+  grid-template-areas: 
+  "name button"
+  "info .";
+  padding: 0;
+  margin: auto 0 auto 30px;
+}
+@media screen and (max-width: 700px){
+  .profile__info{
+    margin: 22.5px auto 28px;
+    grid-template-columns: 200px 18px;
+    grid-template-rows:  39px 18px;
+    grid-gap: 4px 14px;
+  }
+}
