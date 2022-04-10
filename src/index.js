@@ -155,10 +155,14 @@ popups.forEach(function(popup) {    //закрытие кликом на ове�
     if (evt.target.classList.contains('popup_opened')) {
       closePopup(popup);
     }
-    if (evt.target.classList.contains('popup__button-close')) {
-      closePopup(popup);
-    }
   })
 })
 
 
+function closeEsc(evt) {
+  if (evt.key === esc) {
+    const a = document.querySelector('.popup_opened');
+    closePopup(a); 
+  }
+} 
+document.addEventListener('keydown',  closeEsc);
