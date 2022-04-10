@@ -23,6 +23,10 @@ const popupFigcaption=document.querySelector('.popup__figcaption');
 
 const elements= document.querySelector('.elements'); //секция с карточками
 
+const popups = Array.from(document.querySelectorAll('.popup'));// все попапы(с классом попап)
+
+const esc = 'Escape';
+
 
 const initialCards = [
   {
@@ -144,5 +148,17 @@ formPopupCard.addEventListener('submit', (evt)=>{// создание новой 
   closePopup(popupNewPlace);
 })
 
+
+
+popups.forEach(function(popup) {    //закрытие кликом на оверлей
+  popup.addEventListener("mousedown", function(evt) {
+    if (evt.target.classList.contains('popup_opened')) {
+      closePopup(popup);
+    }
+    if (evt.target.classList.contains('popup__button-close')) {
+      closePopup(popup);
+    }
+  })
+})
 
 
