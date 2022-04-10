@@ -7,32 +7,45 @@
   <title>Mesto</title>
   
 </head>
-<body class="page">
+<body class="page"> <!--попап редактирования профиля-->
   <div class="popup popup__profile">
     <div class="popup__container">
       <button type="button" class="popup__close"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
       <form class="popup__box popup__box-profile" name="profile">
-        <input class="popup__info popup__info-name" placeholder="Bведите имя" type="text" name="name" id="name" value="Жак-Ив Кусто">
-        <input  class="popup__info popup__info-profession" placeholder="Bведите профессию" type="text" name="profession" id="profession" value="Исследователь океана">
+        <input class="popup__info popup__info-name" 
+        placeholder="Bведите имя" 
+        type="text" 
+        name="name" id="name" 
+        value="Жак-Ив Кусто" 
+        minlength="2" maxlength="40" required>
+        <input  class="popup__info popup__info-profession" placeholder="Bведите профессию" type="text" name="profession" id="profession" value="Исследователь океана" minlength="2" maxlength="200" required>
         <button type="submit" class="popup__button">Сохранить</button>
       </form>
     </div>
   </div>
 
-  <div class="popup popup_new-place">
+  <div class="popup popup_new-place"> <!--попап добавления новой какрточки-->
     <div class="popup__container">
       <button type="button"class="popup__close popup__close_new-place"></button>
       <h2 class="popup__title">Новое место</h2>
       <form class="popup__box popup__box-card" name="new-place">
-        <input value="" placeholder="Название" type="text" class="popup__info popup__input-title"/>
-        <input value="" placeholder="Ссылка на картинку" type="text" class="popup__info popup__input-link"/>
+        <input value="" 
+              placeholder="Название" 
+              type="text" 
+              class="popup__info popup__input-title"
+              minlength="2" maxlength="30" required/>
+        <input value="" 
+              placeholder="Ссылка на картинку" 
+              type="url" 
+              class="popup__info popup__input-link"
+              required/>
         <button class="popup__button" type="submit">Создать</button>
       </form>
     </div>
   </div>
 
-  <div class="popup popup_image">
+  <div class="popup popup_image"> <!--попап открытие фото-->
     <figure class="popup__figure">
       <img class="popup__img" src="" alt ="">
       <figcaption class="popup__figcaption"></figcaption>
@@ -42,7 +55,7 @@
 
   <div class="page__container">
     <header class="header">
-      <img src= "./images/logo.svg" alt="Логотоп проекта" class="logo">
+      <img src='./images/logo.svg'  alt="Логотоп проекта" class="logo">
     </header>
     <main class="content">
       <section class="profile">
