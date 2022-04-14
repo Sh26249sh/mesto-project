@@ -18,6 +18,5 @@
   
 **Сыллка на GH**
 
-*
-  https://sh26249sh.github.io/mesto-project/
-   ....
+* 
+https://github.com/Sh26249sh/mesto-project
