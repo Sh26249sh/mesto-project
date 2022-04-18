@@ -1,19 +1,19 @@
 
- function showError (formElement, inputElement, errorMessage, validationObject) {
+function showError(formElement, inputElement, errorMessage, validationObject) {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.add(validationObject.inputErrorClass);
   errorElement.textContent = errorMessage;
   errorElement.classList.add(validationObject.errorClass);
 }
 
-function hideError (formElement, inputElement, validationObject) {
+function hideError(formElement, inputElement, validationObject) {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.remove(validationObject.inputErrorClass);
   errorElement.classList.remove(validationObject.errorClass);
   errorElement.textContent = "";
 }
 
-function checkInputValidity (formElement, inputElement, validationObject) {
+function checkInputValidity(formElement, inputElement, validationObject) {
   if (!inputElement.validity.valid) {
     showError(formElement, inputElement, inputElement.validationMessage, validationObject)
   } else {
@@ -21,7 +21,7 @@ function checkInputValidity (formElement, inputElement, validationObject) {
   }
 }
 
-function setEventListener (formElement, validationObject) {
+function setEventListener(formElement, validationObject) {
   const inputList = Array.from(formElement.querySelectorAll(validationObject.inputSelector));
   const buttonElement = formElement.querySelector(validationObject.submitButtonSelector);
   toggleButtonState(inputList, buttonElement, validationObject);
@@ -32,13 +32,13 @@ function setEventListener (formElement, validationObject) {
     });
   })
 }
-function hasInvalidInput (inputList) {
+function hasInvalidInput(inputList) {
   return inputList.some((inputElement) => {
     return (!inputElement.validity.valid);
   })
 }
 
-function toggleButtonState (inputList, buttonElement, validationObject) {
+function toggleButtonState(inputList, buttonElement, validationObject) {
   if (hasInvalidInput(inputList)) {
     buttonElement.classList.add(validationObject.inactiveButtonClass);
     buttonElement.disabled = true;
@@ -48,7 +48,7 @@ function toggleButtonState (inputList, buttonElement, validationObject) {
   }
 }
 
-export function enableFormValidation (validationObject) {
+export function enableFormValidation(validationObject) {
   const formList = Array.from(document.querySelectorAll(validationObject.formSelector));
   formList.forEach((formElement) => {
     formElement.addEventListener('submit', (evt) => {
